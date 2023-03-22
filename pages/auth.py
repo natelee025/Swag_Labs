@@ -2,11 +2,13 @@ from base_page.base import BaseObject
 from locators.locators import Auth as ap
 from data_json import *
 
+
 class AuthPage(BaseObject):
     def authorization(self):
         self.enter_user_name(correct_username)
         self.enter_password(correct_password)
         self.log_in()
+
     def enter_user_name(self, username):
         self.to_send_keys(ap.user_name, username)
 
