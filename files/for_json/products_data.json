@@ -1,0 +1,9 @@
+{
+  "name_A_to_Z": "Name (A to Z)",
+  "name_products_up": ["Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt",
+    "Sauce Labs Fleece Jacket", "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"],
+  "name_Z_to_A": "Name (Z to A)",
+  "price_l_to_h": "Price (low to high)",
+  "price_products_up": ["$7.99", "$9.99", "$15.99", "$15.99", "$29.99", "$49.99"],
+  "price_h_to_l": "Price (high to low)"
+}

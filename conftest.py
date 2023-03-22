@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from pages.auth import AuthPage
+from pages.products import ProductsPage
 
 
 @pytest.fixture()
@@ -31,6 +32,20 @@ def setup(get_webdriver):
 
 
 @pytest.fixture()
+def setup_with_auth(get_webdriver):
+    driver = get_webdriver
+    url = 'https://www.saucedemo.com/'
+    driver.get(url)
+    AuthPage(driver).authorization()
+    yield driver
+    driver.quit()
+
+
+@pytest.fixture()
 def auth(setup):
     return AuthPage(setup)
 
+
+@pytest.fixture()
+def auth_done(setup_with_auth):
+    return ProductsPage(setup_with_auth)

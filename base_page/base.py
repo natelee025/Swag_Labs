@@ -20,8 +20,9 @@ class BaseObject:
     def is_clickable(self, locator):
         return self.wait.until(ec.element_to_be_clickable(locator))
 
-    def click_on(self, locator):
-        self.is_clickable(locator).click()
+    def click_on(self, *locator):
+        for i in locator:
+            self.is_clickable(i).click()
 
     def get_text(self, locator):
         return self.is_visible(locator).text
@@ -29,7 +30,11 @@ class BaseObject:
     def get_url(self):
         return self.driver.current_url
 
-    # def to_select(self, locator):
+    def to_select(self, locator, text):
+        select = Select(self.is_visible(locator))
+        select.select_by_visible_text(text)
 
+    def not_have_element(self, locator):
+        return self.wait.until_not(ec.visibility_of_element_located(locator))
 
 

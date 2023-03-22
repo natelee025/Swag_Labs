@@ -27,7 +27,7 @@ def test_unsuccessful_login(auth, username, password, text):
     auth.enter_user_name(username)
     auth.enter_password(password)
     auth.log_in()
-    auth.assert_text(text)
+    auth.assert_text_error(text)
 
 
 @pytest.mark.parametrize('username, password, text', (empty_username, empty_password, empty_fields,
@@ -37,4 +37,4 @@ def test_empty_fields(auth, username, password, text):
     auth.enter_user_name(username)
     auth.enter_password(password)
     auth.log_in()
-    auth.assert_text(text)
+    auth.assert_text_error(text)

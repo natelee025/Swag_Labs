@@ -1,8 +1,12 @@
 from base_page.base import BaseObject
-from locators.locators import AuthPage as ap
-
+from locators.locators import Auth as ap
+from data_json import *
 
 class AuthPage(BaseObject):
+    def authorization(self):
+        self.enter_user_name(correct_username)
+        self.enter_password(correct_password)
+        self.log_in()
     def enter_user_name(self, username):
         self.to_send_keys(ap.user_name, username)
 
@@ -12,7 +16,7 @@ class AuthPage(BaseObject):
     def log_in(self):
         self.click_on(ap.login_btn)
 
-    def assert_text(self, expected_text):
+    def assert_text_error(self, expected_text):
         actual_text = self.get_text(ap.error_auth)
         assert expected_text == actual_text, f'Failed. We expected text: {expected_text}, but got {actual_text}'
 
