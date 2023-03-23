@@ -3,18 +3,18 @@ from data_json import *
 from locators.locators import Products as pr
 
 
-def test_add_and_remove_one_product(auth_done):
-    auth_done.add_product()
-    auth_done.assert_prod_in_cart(1)
-    auth_done.remove_product()
-    auth_done.cart_is_empty()
+def test_add_and_remove_one_product(prods):
+    prods.add_product()
+    prods.assert_prod_in_cart(1)
+    prods.remove_product()
+    prods.cart_is_empty()
 
 
-def test_add_and_remove_three_products(auth_done):
-    auth_done.add_products()
-    auth_done.assert_prod_in_cart(3)
-    auth_done.remove_products()
-    auth_done.cart_is_empty()
+def test_add_and_remove_three_products(prods):
+    prods.add_products()
+    prods.assert_prod_in_cart(3)
+    prods.remove_products()
+    prods.cart_is_empty()
 
 
 select_name_A_Z = [name_A_to_Z, name_products_up, pr.prods_container_by_name]
@@ -27,6 +27,6 @@ select_price_high_low = [price_h_to_l, price_products_down, pr.prods_container_b
                                                           select_price_high_low),
                          ids=['selection_A_to_Z', 'selection_Z_to_A',
                               'selection_low_to_high', 'selection_high_to_low'])
-def test_selection_A_to_Z(auth_done, item, expected_list, locator):
-    auth_done.select_item(item)
-    auth_done.assert_products_list(expected_list, locator)
+def test_selection_A_to_Z(prods, item, expected_list, locator):
+    prods.select_item(item)
+    prods.assert_products_list(expected_list, locator)

@@ -37,4 +37,13 @@ class BaseObject:
     def not_have_element(self, locator):
         return self.wait.until_not(ec.visibility_of_element_located(locator))
 
+    def assert_text(self, locator, expected_text):
+        actual_text = self.get_text(locator)
+        assert expected_text == actual_text, f'Failed. We expected text: {expected_text}, but got {actual_text}'
+
+    def assert_url(self, expected_url):
+        actual_url = self.get_url()
+        assert actual_url == expected_url, \
+            f'Failed. We expected url: {expected_url}, but got {actual_url}'
+
 

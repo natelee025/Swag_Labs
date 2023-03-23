@@ -35,5 +35,5 @@ class ProductsPage(BaseObject):
 
     def assert_products_list(self, expected_list, locator):
         actual_list = self.get_list_for_assertion(locator)
-        assert expected_list == actual_list, f'Failed. We expected list: {expected_list}, but got {actual_list}'
+        assert expected_list == actual_list, f'Failed. We expected chain of products: {expected_list}, but got {actual_list}'
 

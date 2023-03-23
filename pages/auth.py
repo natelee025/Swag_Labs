@@ -19,10 +19,7 @@ class AuthPage(BaseObject):
         self.click_on(ap.login_btn)
 
     def assert_text_error(self, expected_text):
-        actual_text = self.get_text(ap.error_auth)
-        assert expected_text == actual_text, f'Failed. We expected text: {expected_text}, but got {actual_text}'
+        self.assert_text(ap.error_auth, expected_text)
 
-    def assert_url(self, expected_url):
-        actual_url = self.get_url()
-        assert actual_url == expected_url, \
-            f'Failed. We expected url: {expected_url}, but got {actual_url}'
+    def assert_url_after_auth(self, expected_url):
+        self.assert_url(expected_url)

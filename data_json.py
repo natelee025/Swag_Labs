@@ -27,3 +27,13 @@ price_products_up = data_products['price_products_up']
 
 price_h_to_l = data_products['price_h_to_l']
 price_products_down = price_products_up[::-1]
+
+path_cart = FULL_PATH + '\\files\\for_json\\cart_data.json'
+open_cart = open(path_cart)
+data_cart = json.load(open_cart)
+
+sauce_labs_onesie = data_cart['sauce_labs_onesie']
+tshirt_backpack_jacket = list[data_cart['sauce_labs_onesie'], data_cart['t_shirt_red'], data_cart['sauce_labs_fleece_jacket']]
+first_name = data_cart['first_name']
+last_name = data_cart['last_name']
+postal_code = data_cart['postal_code']

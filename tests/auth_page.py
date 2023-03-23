@@ -18,7 +18,7 @@ def test_successful_login(auth):
     auth.enter_user_name(correct_username)
     auth.enter_password(correct_password)
     auth.log_in()
-    auth.assert_url('https://www.saucedemo.com/inventory.html')
+    auth.assert_url_after_auth('https://www.saucedemo.com/inventory.html')
 
 
 @pytest.mark.parametrize('username, password, text', (locked_out_username, incorrect_username),

@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from pages.auth import AuthPage
 from pages.products import ProductsPage
+from pages.cart import CartPage
 
 
 @pytest.fixture()
@@ -47,5 +48,10 @@ def auth(setup):
 
 
 @pytest.fixture()
-def auth_done(setup_with_auth):
+def prods(setup_with_auth):
     return ProductsPage(setup_with_auth)
+
+
+@pytest.fixture()
+def cart(setup_with_auth):
+    return CartPage(setup_with_auth)
