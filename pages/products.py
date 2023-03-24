@@ -7,7 +7,7 @@ class ProductsPage(BaseObject):
         self.click_on(pr.btn_add_onesie)
 
     def remove_product(self):
-        self.click_on(pr.btn_add_onesie)
+        self.click_on(pr.btn_remove_onesie)
 
     def add_products(self):
         self.click_on(pr.btn_add_backpack, pr.btn_add_jacket, pr.btn_add_red_tshirt)

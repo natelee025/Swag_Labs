@@ -10,7 +10,7 @@ class CartPage(BaseObject):
         self.assert_text(pr.prods_container_by_name, expected_prod)
 
     def check_order_done(self, text):
-        self.assert_text(cr.complete_order, text) #Thank you for your order!
+        self.assert_text(cr.complete_order, text)
 
     def assert_url_cart(self, expected_url):
         self.assert_url(expected_url)

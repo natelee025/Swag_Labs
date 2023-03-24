@@ -33,7 +33,11 @@ open_cart = open(path_cart)
 data_cart = json.load(open_cart)
 
 sauce_labs_onesie = data_cart['sauce_labs_onesie']
-tshirt_backpack_jacket = list[data_cart['sauce_labs_onesie'], data_cart['t_shirt_red'], data_cart['sauce_labs_fleece_jacket']]
+sauce_labs_backpack = data_cart['sauce_labs_backpack']
+sauce_labs_fleece_jacket = data_cart['sauce_labs_fleece_jacket']
+t_shirt_red = data_cart['t_shirt_red']
+
+
 first_name = data_cart['first_name']
 last_name = data_cart['last_name']
 postal_code = data_cart['postal_code']
