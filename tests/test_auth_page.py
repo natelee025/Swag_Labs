@@ -5,7 +5,7 @@ import allure
 
 locked_out_username = [locked_out_username, correct_password, locked_out]
 incorrect_username = [incorrect_username, correct_password, not_match]
-incorrect_password = [correct_username, incorrect_password,not_match]
+incorrect_password = [correct_username, incorrect_password, not_match]
 
 empty_username = ['', correct_password, empty_login]
 empty_password = [correct_username, '', empty_password]
@@ -30,8 +30,6 @@ def test_successful_login(auth):
         auth.assert_url_after_auth('https://www.saucedemo.com/inventory.html')
 
 
-
-# параметризировать имя кейса (?)
 @allure.title('Неудачная авторизация с некорректным логином')
 @allure.suite('Авторизация')
 @pytest.mark.auth
@@ -63,4 +61,3 @@ def test_empty_fields(auth, username, password, text):
         auth.log_in()
     with allure.step(f'Получить ошибку из-за незаполненных полей: {text}'):
         auth.assert_text_error(text)
-
