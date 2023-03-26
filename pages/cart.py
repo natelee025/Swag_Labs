@@ -2,6 +2,7 @@ from base_page.base import BaseObject
 from locators.locators import Cart as cr
 from locators.locators import Products as pr
 
+
 class CartPage(BaseObject):
     def to_cart(self):
         self.click_on(cr.shopping_cart_link)
@@ -56,4 +57,3 @@ class CartPage(BaseObject):
 
     def assert_text_error(self, expected_text):
         self.assert_text(cr.error_on_info, expected_text)
-
