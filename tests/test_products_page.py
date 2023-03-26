@@ -34,7 +34,7 @@ def test_add_and_remove_three_products(prods):
     with allure.step(f'Проверить количество добавленных товаров в корзину: {3}'):
         prods.assert_prod_in_cart(3)
     with allure.step('Удалить товары из корзины'):
-        prods.remove_product()
+        prods.remove_products()
     with allure.step('Проверить, что корзина пуста'):
         prods.cart_is_empty()
 
