@@ -3,4 +3,4 @@
 /.pytest_cache
 */.pytest_cache
 **/__pycache__
-*/allure-report
+*/allure-results
