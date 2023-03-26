@@ -56,3 +56,4 @@ def prods(setup_with_auth):
 @pytest.fixture()
 def cart(setup_with_auth):
     return CartPage(setup_with_auth)
+
