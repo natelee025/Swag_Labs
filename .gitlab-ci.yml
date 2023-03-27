@@ -15,8 +15,10 @@ Tests with allure:
   stage: test
   script:
     - pytest
-    - allure generate -c -o tests/allure-results
+    - allure generate -c allure-results -o allure-report
 
   artifacts:
+    when: always
     paths:
-      - tests/allure-results
+      - $CI_PROJECT_DIR/allure-results
+      - $CI_PROJECT_DIR/allure-report
