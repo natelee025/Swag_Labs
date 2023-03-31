@@ -1,8 +1,9 @@
 import os
 import json
+from pathlib import Path
 
 FULL_PATH = os.path.dirname(os.path.abspath(__file__))
-path_auth = FULL_PATH+'\\files\\for_json\\auth_data.json'
+path_auth = Path(FULL_PATH, 'files', 'for_json', 'auth_data.json')
 open_auth = open(path_auth)
 data_auth = json.load(open_auth)
 
@@ -12,7 +13,7 @@ incorrect_username = data_auth['incorrect_username']
 incorrect_password = data_auth['incorrect_password']
 locked_out_username = data_auth['locked_out_username']
 
-path_products = FULL_PATH+'\\files\\for_json\\products_data.json'
+path_products = Path(FULL_PATH, 'files', 'for_json', 'products_data.json')
 open_products = open(path_products)
 data_products = json.load(open_products)
 
@@ -28,7 +29,7 @@ price_products_up = data_products['price_products_up']
 price_h_to_l = data_products['price_h_to_l']
 price_products_down = price_products_up[::-1]
 
-path_cart = FULL_PATH + '\\files\\for_json\\cart_data.json'
+path_cart = Path(FULL_PATH, 'files', 'for_json', 'cart_data.json')
 open_cart = open(path_cart)
 data_cart = json.load(open_cart)
 

@@ -33,8 +33,8 @@ def test_successful_login(auth):
 @allure.title('Неудачная авторизация с некорректным логином')
 @allure.suite('Авторизация')
 @pytest.mark.auth
-@pytest.mark.parametrize('username, password, text', (locked_out_username, incorrect_username),
-                         ids=['blocked_username', 'incorrect_username'])
+@pytest.mark.parametrize('username, password, text', (locked_out_username, incorrect_username, incorrect_password),
+                         ids=['blocked_username', 'incorrect_username', 'incorrect_password'])
 def test_unsuccessful_login(auth, username, password, text):
     with allure.step(f'Заполнить поле логина: {username}'):
         auth.enter_user_name(username)

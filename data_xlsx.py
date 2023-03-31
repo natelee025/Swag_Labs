@@ -1,9 +1,10 @@
 import os
 import pandas as pd
+from pathlib import Path
 # import openpyxl
 
 FULL_PATH = os.path.dirname(os.path.abspath(__file__))
-path_errors = FULL_PATH+'\\files\\for_xlsx\\errors.xlsx'
+path_errors = Path(FULL_PATH, 'files', 'for_xlsx', 'errors.xlsx')
 open_errors = pd.ExcelFile(path_errors)
 auth_er = open_errors.parse('auth_er')
 cart_er = open_errors.parse('cart_er')

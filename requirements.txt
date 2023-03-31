@@ -5,3 +5,4 @@ pytest-check
 pandas~=1.5.3
 openpyxl
 allure-pytest
+pathlib
