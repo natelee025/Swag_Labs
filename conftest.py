@@ -11,9 +11,9 @@ from pages.cart import CartPage
 @pytest.fixture()
 def get_chrome_options():
     options = Options()
-    options.add_argument('chrome')
     options.add_argument('--start-maximized')
     options.add_argument('--headless')
+    options.add_argument("--no-sandbox")
     return options
 
 
